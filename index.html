@@ -4,208 +4,277 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Surtidora DulceMix</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --azul: #002d62;
-      --rojo: #ce1126;
-      --blanco: #ffffff;
-      --gris: #f4f6f8;
-      --sombra: 0 10px 25px rgba(0,0,0,0.12);
+    :root{
+      --azul:#002d62;
+      --rojo:#ce1126;
+      --gris:#f5f7fa;
+      --oscuro:#1c1c1c;
+      --sombra:0 18px 40px rgba(0,0,0,.15);
     }
 
-    * { box-sizing: border-box; }
+    *{box-sizing:border-box}
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background: var(--gris);
-      color: #1a1a1a;
-      line-height: 1.6;
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:var(--gris);
+      color:var(--oscuro);
     }
 
-    header {
-      background: linear-gradient(135deg, var(--azul), #014a9f);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+    /* HERO */
+    header{
+      background:linear-gradient(135deg,var(--azul),#014a9f);
+      color:#fff;
+      padding:90px 20px 70px;
+      text-align:center;
     }
 
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p { font-size: 1.1rem; opacity: 0.95; }
-
-    nav {
-      background: var(--rojo);
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 14px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    header h1{
+      font-size:3rem;
+      margin-bottom:10px;
+      letter-spacing:1px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+    header p{
+      font-size:1.2rem;
+      max-width:650px;
+      margin:0 auto 30px;
+      opacity:.95;
     }
 
-    section {
-      padding: 70px 20px;
-      max-width: 1200px;
-      margin: auto;
+    .cta{
+      display:inline-block;
+      background:var(--rojo);
+      color:#fff;
+      padding:15px 35px;
+      border-radius:40px;
+      font-weight:600;
+      text-decoration:none;
+      transition:.3s;
     }
 
-    h2 {
-      color: var(--azul);
-      margin-bottom: 40px;
-      font-size: 2rem;
-      text-align: center;
+    .cta:hover{transform:scale(1.05)}
+
+    /* NAV */
+    nav{
+      background:#fff;
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      padding:16px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+      position:sticky;
+      top:0;
+      z-index:10;
     }
 
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+    nav a{
+      color:var(--azul);
+      text-decoration:none;
+      font-weight:600;
     }
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: var(--sombra);
-      padding: 0;
-      text-align: center;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    section{
+      padding:90px 20px;
+      max-width:1200px;
+      margin:auto;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.18);
+    h2{
+      text-align:center;
+      font-size:2.4rem;
+      color:var(--azul);
+      margin-bottom:60px;
     }
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    /* PRODUCTOS */
+    .productos{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
     }
 
-    .card h3 {
-      margin: 20px 0 10px;
-      color: var(--azul);
-      font-size: 1.3rem;
+    .card{
+      background:#fff;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--sombra);
+      transition:.35s;
     }
 
-    .card p {
-      padding: 0 20px;
-      font-size: 0.95rem;
-      color: #555;
+    .card:hover{
+      transform:translateY(-12px);
     }
 
-    .card button {
-      margin: 20px;
-      background: var(--rojo);
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: background 0.3s ease;
+    .card img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
     }
 
-    .card button:hover { background: #a50d1f; }
-
-    .contacto {
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 600px;
-      margin: auto;
-      box-shadow: var(--sombra);
+    .card-content{
+      padding:30px;
+      text-align:center;
     }
 
-    form { display: grid; gap: 18px; }
-
-    input, textarea {
-      padding: 12px 14px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 0.95rem;
+    .card h3{
+      font-size:1.4rem;
+      margin-bottom:10px;
+      color:var(--azul);
     }
 
-    footer {
-      background: var(--azul);
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
+    .card p{
+      font-size:.95rem;
+      color:#555;
+    }
+
+    .card button{
+      margin-top:25px;
+      background:var(--rojo);
+      border:none;
+      color:#fff;
+      padding:14px 28px;
+      border-radius:30px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .card button:hover{background:#a50d1f}
+
+    /* COMPRAS */
+    .compras{
+      background:#fff;
+      border-radius:28px;
+      padding:60px;
+      box-shadow:var(--sombra);
+      text-align:center;
+    }
+
+    .compras ul{
+      list-style:none;
+      padding:0;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .compras li{
+      background:var(--gris);
+      padding:25px;
+      border-radius:18px;
+      font-weight:500;
+    }
+
+    /* CONTACTO */
+    .contacto{
+      max-width:600px;
+      margin:auto;
+      background:#fff;
+      padding:60px;
+      border-radius:30px;
+      box-shadow:var(--sombra);
+    }
+
+    form{display:grid;gap:20px}
+
+    input,textarea{
+      padding:14px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      font-family:'Poppins',sans-serif;
+    }
+
+    footer{
+      background:var(--azul);
+      color:#fff;
+      text-align:center;
+      padding:35px;
+      margin-top:80px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Surtidora DulceMix</h1>
-    <p>Todo en dulces, galletas y golosinas al mejor precio</p>
-  </header>
+<header>
+  <h1>Surtidora DulceMix</h1>
+  <p>Distribuimos dulces, galletas y snacks al por mayor y al detalle en toda la República Dominicana</p>
+  <a href="#menu" class="cta">Ver productos</a>
+</header>
 
-  <nav>
-    <a href="#menu">Menú</a>
-    <a href="#compras">Compras</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+<nav>
+  <a href="#menu">Productos</a>
+  <a href="#compras">Compras</a>
+  <a href="#contacto">Contacto</a>
+</nav>
 
-  <section id="menu">
-    <h2>Menú de Dulces y Galletas</h2>
-    <div class="productos">
-      <div class="card">
-        <img src="dulces.jpg" alt="Dulces" />
-        <h3>Dulces Variados</h3>
-        <p>Chocolates, caramelos y gomitas.</p>
+<section id="menu">
+  <h2>Nuestros Productos</h2>
+  <div class="productos">
+
+    <div class="card">
+      <img src="dulces.jpg" alt="Dulces">
+      <div class="card-content">
+        <h3>Dulces</h3>
+        <p>Chocolates, caramelos, gomitas y más para todos los gustos.</p>
         <button>Agregar al carrito</button>
       </div>
-      <div class="card">
-        <img src="galletas.jpg" alt="Galletas" />
+    </div>
+
+    <div class="card">
+      <img src="galletas.jpg" alt="Galletas">
+      <div class="card-content">
         <h3>Galletas</h3>
-        <p>Galletas dulces y rellenas.</p>
+        <p>Las mejores marcas de galletas dulces y rellenas.</p>
         <button>Agregar al carrito</button>
       </div>
-      <div class="card">
-        <img src="snacks.jpg" alt="Snacks" />
+    </div>
+
+    <div class="card">
+      <img src="snacks.jpg" alt="Snacks">
+      <div class="card-content">
         <h3>Snacks</h3>
-        <p>Papitas, palitos y más.</p>
+        <p>Papitas, palitos y snacks ideales para colmados y eventos.</p>
         <button>Agregar al carrito</button>
       </div>
     </div>
-  </section>
 
-  <section id="compras">
-    <h2>Compras</h2>
-    <p>Realiza tus pedidos al por mayor o al detalle. Contáctanos para precios especiales y entregas rápidas.</p>
+  </div>
+</section>
+
+<section id="compras">
+  <h2>Compras y Distribución</h2>
+  <div class="compras">
+    <p>Ofrecemos precios especiales para colmados, negocios y compras al por mayor.</p>
     <ul>
-      <li>Ventas al por mayor</li>
-      <li>Pedidos para colmados y eventos</li>
-      <li>Entrega a domicilio</li>
+      <li>✔ Ventas al por mayor</li>
+      <li>✔ Pedidos para eventos</li>
+      <li>✔ Entrega rápida</li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <div class="contacto">
-      <form>
-        <input type="text" placeholder="Nombre" required />
-        <input type="email" placeholder="Correo electrónico" required />
-        <textarea rows="4" placeholder="Mensaje"></textarea>
-        <button type="submit">Enviar mensaje</button>
-      </form>
-    </div>
-  </section>
+<section id="contacto">
+  <h2>Contáctanos</h2>
+  <div class="contacto">
+    <form>
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea rows="4" placeholder="Mensaje"></textarea>
+      <button class="cta" type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2026 Surtidora DulceMix | Todos los derechos reservados</p>
-  </footer>
+<footer>
+  <p>© 2026 Surtidora DulceMix · República Dominicana</p>
+</footer>
 
 </body>
 </html>
