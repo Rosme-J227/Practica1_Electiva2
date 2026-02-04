@@ -5,89 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Surtidora DulceMix</title>
   <style>
+    :root {
+      --azul: #002d62;
+      --rojo: #ce1126;
+      --blanco: #ffffff;
+      --gris: #f4f6f8;
+      --sombra: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f2f7ff; 
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--gris);
       color: #1a1a1a;
+      line-height: 1.6;
     }
+
     header {
-      background: #002d62; 
+      background: linear-gradient(135deg, var(--azul), #014a9f);
       color: white;
-      padding: 20px;
+      padding: 60px 20px;
       text-align: center;
     }
+
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; opacity: 0.95; }
+
     nav {
-      background: #ce1126; 
+      background: var(--rojo);
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 10px;
+      gap: 30px;
+      padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
+
     section {
-      padding: 40px 20px;
-      max-width: 1100px;
+      padding: 70px 20px;
+      max-width: 1200px;
       margin: auto;
     }
+
     h2 {
-      color: #002d62;
-      margin-bottom: 20px;
+      color: var(--azul);
+      margin-bottom: 40px;
+      font-size: 2rem;
+      text-align: center;
     }
+
     .productos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
+
     .card {
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 20px;
+      border-radius: 16px;
+      box-shadow: var(--sombra);
+      padding: 0;
       text-align: center;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.18);
+    }
+
     .card img {
-      max-width: 100%;
-      height: 150px;
+      width: 100%;
+      height: 200px;
       object-fit: cover;
-      border-radius: 8px;
     }
+
+    .card h3 {
+      margin: 20px 0 10px;
+      color: var(--azul);
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      padding: 0 20px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
     .card button {
-      background: #ce1126;
+      margin: 20px;
+      background: var(--rojo);
       color: white;
       border: none;
-      padding: 10px 15px;
-      margin-top: 10px;
-      border-radius: 5px;
+      padding: 12px 20px;
+      border-radius: 30px;
       cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.3s ease;
     }
-    .card button:hover {
-      background: #002d62;
-    }
+
+    .card button:hover { background: #a50d1f; }
+
     .contacto {
-      background: #ffe5ec;
-      border-radius: 10px;
-      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: var(--sombra);
     }
-    form {
-      display: grid;
-      gap: 15px;
-    }
+
+    form { display: grid; gap: 18px; }
+
     input, textarea {
-      padding: 10px;
-      border-radius: 5px;
+      padding: 12px 14px;
+      border-radius: 8px;
       border: 1px solid #ccc;
+      font-size: 0.95rem;
     }
+
     footer {
-      background: #002d62;
+      background: var(--azul);
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 25px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
